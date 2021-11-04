@@ -16,3 +16,11 @@ do
 	sleep 2
 	curl -o "${IMAGE_DIR}/${CAMERA_IP}-Preset_${i}-Snapshot.jpg"  "http://${CAMERA_IP}/snapshot.jpg"
 done
+
+montage \
+  -density 300 \
+  -tile 3x0 \
+  -geometry +20+20 \
+  -border 10 \
+  "${IMAGE_DIR}/${CAMERA_IP}-Preset_*-Snapshot.jpg" \
+  "${IMAGE_DIR}/${CAMERA_IP}-Preset_Grid.jpg"
