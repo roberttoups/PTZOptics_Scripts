@@ -18,7 +18,7 @@ do
 done
 
 montage \
-  -density 300 \
+  -density 72 \
   -tile 3x0 \
   -geometry +20+20 \
   -border 10 \
