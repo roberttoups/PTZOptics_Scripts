@@ -24,7 +24,7 @@ do
   LABEL_PATH="${IMAGE_DIR}/${CAMERA_IP}-Preset_${i}-Labeled.jpg"
   echo "Labelling ${IMAGE_PATH} and saving to ${LABEL_PATH}"
   montage \
-    -label "Preset #${i}" -font Verdana-Bold -pointsize 48 \
+    -label "Preset #${i}" -font Nimbus-Sans-L-Bold-Condensed -pointsize 48 \
     ${IMAGE_PATH} \
     -geometry +0+5 \
     ${LABEL_PATH}
@@ -37,7 +37,7 @@ montage \
   -geometry +20+20 \
   -border 10 \
   -background black \
-  -title "${CAMERA_IP} Camera Presets" -fill white -font Verdana-Bold -pointsize 72 \
+  -title "${CAMERA_IP} Camera Presets" -fill white -font Nimbus-Sans-L-Bold-Condensed -pointsize 72 \
   "./${IMAGE_DIR}/${CAMERA_IP}-Preset_*-Labeled.jpg" "./${IMAGE_DIR}/${CAMERA_IP}-Preset_Grid.jpg"
 convert \
   "./${IMAGE_DIR}/${CAMERA_IP}-Preset_Grid.jpg" \
