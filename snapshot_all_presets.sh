@@ -22,12 +22,15 @@ do
   echo "Downloading Snapshot to ${IMAGE_PATH}"
 	curl -s -o ${IMAGE_PATH} "http://${CAMERA_IP}/snapshot.jpg"
   LABEL_PATH="${IMAGE_DIR}/${CAMERA_IP}-Preset_${i}-Labeled.jpg"
-  echo "Labelling ${IMAGE_PATH} and saving to ${LABEL_PATH}"
+  echo "Labeling ${IMAGE_PATH} and saving to ${LABEL_PATH}"
   montage \
     -label "Preset #${i}" -font Nimbus-Sans-L-Bold-Condensed -pointsize 48 \
     ${IMAGE_PATH} \
     -geometry +0+5 \
     ${LABEL_PATH}
+  ICON_PATH="${IMAGE_DIR}/${CAMERA_IP}-Preset_${i}-Icon.jpg"
+  echo "Making StreamDeck Icon: ${ICON_PATH}"
+  convert ${IMAGE_PATH} -resize 72x72! ${ICON_PATH}
 done
 
 echo "Building Preset Image Grid"
